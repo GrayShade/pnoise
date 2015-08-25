@@ -9,6 +9,7 @@
 echo -e "\n=== gcc2 -O3:"
 perf stat -r 10 ./bin_test2_c_gcc 2>&1 > /dev/null | grep time
 objdump -d bin_test2_c_gcc | wc -l
+./bin_test2_c_gcc | md5sum
 exit 0
 echo -e "\n=== mono C#:"
 perf stat -r 10 mono -O=float32 bin_test_cs 2>&1 > /dev/null | grep time
