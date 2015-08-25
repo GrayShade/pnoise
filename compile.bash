@@ -1,6 +1,6 @@
 #!/bin/bash
 #gcc -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test_c_gcc test.c -lm
-gcc -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test2_c_gcc test2.c -lm
+gcc -std=c99 -march=native -O3 -o bin_test2_c_gcc test2.c -lm
 #clang -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test_c_clang test.c -lm
 #clang -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test2_c_clang test2.c -lm
 exit 0
