@@ -92,7 +92,7 @@ static void init_noise2d(Noise2DContext *ctx)
 
 int main(int argc, char **argv)
 {
-        srand(time(NULL));
+        srand(0);
 
         const char *symbols[] = {" ", "░", "▒", "▓", "█", "█"};
         float *pixels = malloc(sizeof(float) * 256 * 256);
