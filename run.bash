@@ -1,13 +1,14 @@
 #!/bin/bash
 
-echo -e "=== clang -O3:"
-perf stat -r 10 ./bin_test_c_clang 2>&1 > /dev/null | grep time
-echo -e "\n=== gcc -O3:"
-perf stat -r 10 ./bin_test_c_gcc 2>&1 > /dev/null | grep time
-echo -e "=== clang2 -O3:"
-perf stat -r 10 ./bin_test2_c_clang 2>&1 > /dev/null | grep time
+#echo -e "=== clang -O3:"
+#perf stat -r 10 ./bin_test_c_clang 2>&1 > /dev/null | grep time
+#echo -e "=== clang2 -O3:"
+#perf stat -r 10 ./bin_test2_c_clang 2>&1 > /dev/null | grep time
+#echo -e "\n=== gcc -O3:"
+#perf stat -r 10 ./bin_test_c_gcc 2>&1 > /dev/null | grep time
 echo -e "\n=== gcc2 -O3:"
 perf stat -r 10 ./bin_test2_c_gcc 2>&1 > /dev/null | grep time
+exit 0
 echo -e "\n=== mono C#:"
 perf stat -r 10 mono -O=float32 bin_test_cs 2>&1 > /dev/null | grep time
 echo -e "\n=== mono F#:"

@@ -1,8 +1,9 @@
 #!/bin/bash
-gcc -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test_c_gcc test.c -lm
+#gcc -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test_c_gcc test.c -lm
 gcc -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test2_c_gcc test2.c -lm
-clang -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test_c_clang test.c -lm
-clang -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test2_c_clang test2.c -lm
+#clang -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test_c_clang test.c -lm
+#clang -std=c99 -march=native -msse3 -mfpmath=sse -O3 -o bin_test2_c_clang test2.c -lm
+exit 0
 dmd -ofbin_test_d_dmd -O -boundscheck=off -inline -release test.d
 ldc2 -O5 -ofbin_test_d_ldc test.d -release -mcpu=native -inline -boundscheck=off
 gdc -Ofast -o bin_test_d_gdc test.d -frelease -finline -march=native -fno-bounds-check
