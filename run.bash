@@ -4,11 +4,12 @@
 #perf stat -r 10 ./bin_test_c_clang 2>&1 > /dev/null | grep time
 #echo -e "=== clang2 -O3:"
 #perf stat -r 10 ./bin_test2_c_clang 2>&1 > /dev/null | grep time
-#echo -e "\n=== gcc -O3:"
-#perf stat -r 10 ./bin_test_c_gcc 2>&1 > /dev/null | grep time
+echo -e "\n=== gcc -O3:"
+perf stat -r 10 ./bin_test_c_gcc 2>&1 > /dev/null | grep time
 echo -e "\n=== gcc2 -O3:"
 perf stat -r 10 ./bin_test2_c_gcc 2>&1 > /dev/null | grep time
-objdump -d bin_test2_c_gcc | wc -l
+#objdump -d bin_test2_c_gcc | wc -l
+gdb -batch -ex 'file bin_test2_c_gcc' -ex 'disassemble noise2d_get' | cut -f2 | wc -l
 ./bin_test2_c_gcc | md5sum
 exit 0
 echo -e "\n=== mono C#:"
